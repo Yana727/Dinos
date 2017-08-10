@@ -3,8 +3,6 @@ const app = express()
 
 const mustacheExpress = require('mustache-express')
 const bodyParser = require('body-parser')
-const pgPromise = require('pg-promise')()
-const database = pgPromise({database: 'dinos_db'})
 
 app.engine('mst', mustacheExpress())
 app.set('views', './views')
@@ -14,11 +12,18 @@ app.use(express.static('public'))
 app.use (bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.get('/', (req, res) => {
+  res.render('home')
+})
+app.get('/dinos', (req, res) => {
+  res.json(dinos)
+})
+
 let dinos = [
   {
     id:1,
     name:'Alamosaurus',
-    pic:'https://vignette1.wikia.nocookie.net/landbeforetime/images/f/fb/Alamosaurus-texas-geology.jpg/revision/latest?cb=20150810232317"',
+    pic:'https://vignette1.wikia.nocookie.net/landbeforetime/images/f/fb/Alamosaurus-texas-geology.jpg/revision/latest?cb=20150810232317',
     size:'98 ft',
     weight:'73 tonnes',
     habitat:'Skeletal elements of Alamosaurus are among the most common Late Cretaceous dinosaur fossils found in the United States Southwest and are now used to define the fauna of that time and place, known as the "Alamosaurus fauna."'
@@ -53,9 +58,12 @@ let dinos = [
   }
 ]
 
+
+
+
 //rout to the website
 app.get('/api/dinos/', (req, res) =>{
-  res.send(dinos)
+  res.json(dinos)
 })
 app.get('/api/dinos/:id', (req, res) =>{
   res.json(dinos[req.params.id])
