@@ -32,6 +32,18 @@ if (dinoInfo) {
     let picDino = document.createElement('img')
     picDino.src = dino.pic
     dinoInfo.appendChild(picDino)
+
+    let sizeDino = document.createElement('h2')
+    sizeDino.textContent = dino.size
+    dinoInfo.appendChild(sizeDino)
+
+    let weightDino = document.createElement('h2')
+    weightDino.textContent = dino.weight
+    dinoInfo.appendChild(weightDino)
+
+    let habitatDino = document.createElement('p')
+    habitatDino.textContent = dino.habitat
+    dinoInfo.appendChild(habitatDino)
   })
 }
 
