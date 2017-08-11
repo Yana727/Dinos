@@ -8,7 +8,7 @@
     <main class="dinoInfo">
 
     </main>
-    <h3>DINO NAME</h3>
+  
     <ul>
       <li>
       <form class="" action="/dino/:id" method="post">

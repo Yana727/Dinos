@@ -23,11 +23,15 @@ if (allDinos) {
 
 if (dinoInfo) {
   const id = window.location.pathname.split('/')[2]
-  fetch(`/dino/${id}`).then(res => res.json()).then(json => {
+  fetch(`/dino/${id}`).then(res => res.json()).then(dino => {
     //${}look at every id and picks the dino by the link
-    console.log(json)
+    let oneDino = document.createElement('h2')
+    oneDino.textContent = dino.name
+    dinoInfo.appendChild(oneDino)
 
-    // DO DOM STUFF WITH JSON
+    let picDino = document.createElement('img')
+    picDino.src = dino.pic
+    dinoInfo.appendChild(picDino)
   })
 }
 
