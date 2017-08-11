@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dino</title>
+  </head>
+  <body>
+    <main class="dinoInfo">
+
+    </main>
+    <h3>DINO NAME</h3>
+    <ul>
+      <li>
+      <form class="" action="/dino/:id" method="post">
+        <button type="button" name="delete"></button>
+      </form>
+    </li>
+    </ul>
+    <script type="text/javascript" src="/main.js"></script>
+  </body>
+</html>

@@ -10,9 +10,9 @@
     <h1>Dinosaurs</h1>
     <div class="wrapper">
     <ul class='allDinos'>
-      
+
     </ul>
     </div>
-    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
   </body>
 </html>
